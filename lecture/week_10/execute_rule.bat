@@ -1,0 +1,1 @@
+swipl rule.pl
