@@ -1,3 +1,0 @@
-This is a test TEXT FILE to see
-if prolog can read
-this file.
