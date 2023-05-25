@@ -48,7 +48,9 @@ print_frequent_words(Frequencies, N) :-
 
 % get the first N elements of a list
 get_n_elements(N, List, Front) :-
-	length(Front, N),
+	length(List, L),
+	M is min(N, L), % Prevents error if the Nth term is greater than the amount of unique words
+	length(Front, M),
 	append(Front, _, List).
 
 print_word_frequency(F-W) :-
@@ -61,7 +63,7 @@ count_illegal_phrases(Frequencies, IllegalPhraseCounter) :-
   sum_list(Counts, IllegalPhraseCounter). % add up all the counts
 
 main :-
-  read_file('emails_to_check/email4.txt', Words),
+  read_file('emails_to_check/email6.txt', Words),
   % write("Words: "),
   % writeln(Words), % debugging
 
